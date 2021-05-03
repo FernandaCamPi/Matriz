@@ -1,0 +1,30 @@
+static void Main(string[] args)
+        {
+            int linhas, colunas;
+            string texto = "*";
+            string vazio = " ";
+
+            Console.WriteLine("Informe o número de linhas: ");
+            linhas = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Informe o número de colunas: ");
+            colunas = Convert.ToInt32(Console.ReadLine());
+
+            string[,] matriz = new string[linhas, colunas];
+
+            for (int l = 0; l < linhas; l++)
+            {
+                for (int c = 0; c < colunas; c++)
+                {
+                    if ((l == c) || ((l + c) == (linhas - 1)))
+                    {
+                        matriz[l, c] = texto;
+                    }
+                    else
+                    {
+                        matriz[l, c] = vazio;
+                    }
+                    Console.Write(matriz[l, c] + "\t");
+                }
+                Console.WriteLine("\t");
+            }
+        }
